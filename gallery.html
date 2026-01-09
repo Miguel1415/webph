@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio | Fotografía de Autor</title>
+    <meta name="description"
+        content="Fotografía profesional de eventos y venta de cuadros exclusivos por Miguel Olivera.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;500;700&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+
+<body class="dark-theme">
+    <nav id="navbar" class="glass-effect">
+        <div class="container nav-content">
+            <a href="#" class="logo">Miguel Olivera Labrin</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#hero">Inicio</a></li>
+                <li><a href="gallery.html" class="active">Galería</a></li>
+                <li><a href="index.html#videos">Videos</a></li>
+                <li><a href="index.html#testimonials">Testimonios</a></li>
+                <li><a href="index.html#about">Nosotros</a></li>
+                <li><a href="index.html#instagram">Instagram</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="header-spacer" style="height: var(--nav-height);"></div>
+
+    <main>
+        <section id="gallery-page" class="container section">
+            <div class="section-header section-fade">
+                <h2 class="section-title">Galería</h2>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Todo</button>
+                    <button class="filter-btn" data-filter="landscapes">Paisajes</button>
+                    <button class="filter-btn" data-filter="frames">Cuadros</button>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item section-fade" data-category="frames">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-01.jpg" alt="Composición Visual">
+                    </div>
+                    <div class="item-content">
+                        <h3>Composición Visual</h3>
+                        <p class="collection-desc">Arte en su máxima expresión.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-02.jpg" alt="Paisaje Aéreo 1">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 1</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-03.jpg" alt="Paisaje Aéreo 2">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 2</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-04.jpg" alt="Paisaje Aéreo 3">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 3</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-05.jpg" alt="Paisaje Aéreo 4">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 4</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-06.jpg" alt="Paisaje Aéreo 5">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 5</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-07.jpg" alt="Paisaje Aéreo 6">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 6</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-08.jpg" alt="Paisaje Aéreo 7">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 7</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-09.jpg" alt="Paisaje Aéreo 8">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 8</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-10.jpg" alt="Paisaje Aéreo 9">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 9</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-11.jpg" alt="Paisaje Aéreo 10">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 10</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="frames">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-12.jpg" alt="Perspectiva Natural 1">
+                    </div>
+                    <div class="item-content">
+                        <h3>Perspectiva Natural 1</h3>
+                        <p class="collection-desc">Detalles que cuentan historias.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="frames">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-13.jpg" alt="Perspectiva Natural 2">
+                    </div>
+                    <div class="item-content">
+                        <h3>Perspectiva Natural 2</h3>
+                        <p class="collection-desc">Detalles que cuentan historias.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="frames">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-14.jpg" alt="Perspectiva Natural 3">
+                    </div>
+                    <div class="item-content">
+                        <h3>Perspectiva Natural 3</h3>
+                        <p class="collection-desc">Detalles que cuentan historias.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="frames">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-15.jpg" alt="Perspectiva Natural 4">
+                    </div>
+                    <div class="item-content">
+                        <h3>Perspectiva Natural 4</h3>
+                        <p class="collection-desc">Detalles que cuentan historias.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="frames">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-16.jpg" alt="Perspectiva Natural 5">
+                    </div>
+                    <div class="item-content">
+                        <h3>Perspectiva Natural 5</h3>
+                        <p class="collection-desc">Detalles que cuentan historias.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="frames">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-17.jpg" alt="Perspectiva Natural 6">
+                    </div>
+                    <div class="item-content">
+                        <h3>Perspectiva Natural 6</h3>
+                        <p class="collection-desc">Detalles que cuentan historias.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="frames">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-18.jpg" alt="Perspectiva Natural 7">
+                    </div>
+                    <div class="item-content">
+                        <h3>Perspectiva Natural 7</h3>
+                        <p class="collection-desc">Detalles que cuentan historias.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="frames">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/Galeria/gallery-img-19.jpg" alt="Perspectiva Natural 8">
+                    </div>
+                    <div class="item-content">
+                        <h3>Perspectiva Natural 8</h3>
+                        <p class="collection-desc">Detalles que cuentan historias.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Visual Studio - Miguel Olivera. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="index.html#hero">Inicio</a>
+                <a href="gallery.html">Galería</a>
+                <a href="index.html#about">Nosotros</a>
+                <a href="index.html#contact">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

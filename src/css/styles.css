@@ -342,61 +342,89 @@ section {
 
 .gallery-item {
     grid-column: span 6;
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery-item:nth-child(even) {
-    margin-top: 6rem;
-}
-
-.gallery-item.large {
-    grid-column: span 8;
-}
-
-.gallery-item.small {
-    grid-column: span 4;
+    margin-top: 8rem;
+    /* Start stagger effect */
 }
 
 .item-inner {
     position: relative;
     overflow: hidden;
     background: var(--bg-surface);
+    margin-bottom: 2rem;
 }
 
 .gallery-item img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4/5;
+    aspect-ratio: 3/2;
+    /* Landscape ratio as per reference */
     object-fit: cover;
     transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
     display: block;
-    filter: grayscale(20%);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.08) rotate(1deg);
-    filter: grayscale(0%);
-}
-
-.item-info {
-    padding: 2rem 0;
-    transition: var(--transition);
-}
-
-.item-info h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.item-info p {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    filter: grayscale(10%);
 }
 
 .gallery-item:hover img {
     transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.item-content {
+    padding: 0 1rem;
+    transition: var(--transition);
+}
+
+.item-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    /* Lighter font weight */
+    color: var(--primary);
+}
+
+.collection-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+.btn-text {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    transition: var(--transition);
+}
+
+.btn-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--accent);
+    transition: var(--transition);
+}
+
+.gallery-item:hover .btn-text::after {
+    width: 100%;
+}
+
+.gallery-item:hover .btn-text {
+    color: #fff;
 }
 
 /* About Section */
