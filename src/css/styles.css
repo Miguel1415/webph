@@ -157,11 +157,65 @@ section {
     background-position: center;
     position: relative;
     padding-top: var(--nav-height);
+    overflow: hidden;
+}
+
+.hero-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 0;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background-color: var(--primary);
+    transform: scale(1.2);
 }
 
 .hero-content {
     text-align: left;
     max-width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -236,6 +290,23 @@ section {
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    max-width: 600px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center .section-subtitle {
+    margin: 0 auto;
 }
 
 .gallery-filters {
@@ -397,6 +468,169 @@ textarea:focus {
 
 .btn-block {
     width: 100%;
+}
+
+/* Video Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.video-grid-side {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.video-container {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-container.small {
+    aspect-ratio: 16/9;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-surface);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.02) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.video-card:hover .video-placeholder {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.play-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.5;
+    transition: var(--transition);
+}
+
+.video-card:hover .play-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.video-info {
+    padding: 1.5rem 0;
+}
+
+.video-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.video-info p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.testimonial-card {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quote-icon {
+    font-size: 4rem;
+    font-family: 'Outfit', sans-serif;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.3;
+    margin-bottom: -1rem;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.testimonial-author h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.testimonial-author p {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Instagram Feed */
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.insta-item {
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.insta-item .video-placeholder {
+    aspect-ratio: 1/1;
+}
+
+.insta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.insta-item:hover .insta-overlay {
+    opacity: 1;
+}
+
+.insta-overlay span {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.accent-link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.accent-link:hover {
+    color: #fff;
 }
 
 /* Footer */
@@ -568,5 +802,17 @@ textarea:focus {
 
     .btn-outline {
         margin-left: 0;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insta-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

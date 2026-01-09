@@ -24,7 +24,10 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#gallery">Galería</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#testimonials">Testimonios</a></li>
                 <li><a href="#about">Nosotros</a></li>
+                <li><a href="#instagram">Instagram</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
@@ -35,8 +38,27 @@
         </div>
     </nav>
 
-    <header id="hero" class="full-height section-fade"
-        style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./public/assets/images/hero-dji-aerial.jpg');">
+    <header id="hero" class="full-height section-fade">
+        <div class="hero-carousel">
+            <div class="carousel-slide active"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./public/assets/images/carrousel/aerial-valley-sunset.jpg');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./public/assets/images/carrousel/aerial-river-delta.jpg');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./public/assets/images/carrousel/aerial-forest-lake.jpg');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./public/assets/images/carrousel/aerial-river-braided.jpg');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./public/assets/images/carrousel/nature-island-detail.jpg');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./public/assets/images/carrousel/mountain-snow-peaks.jpg');">
+            </div>
+        </div>
         <div class="container hero-content">
             <p class="reveal-text">Fotografía de Autor</p>
             <h1 class="reveal-text delay-1">Capturando la <span>Esencia</span></h1>
@@ -45,6 +67,7 @@
                 <a href="#contact" class="btn btn-outline">Reservar Sesión</a>
             </div>
         </div>
+        <div class="carousel-dots"></div>
         <div class="scroll-indicator">
             <div class="mouse"></div>
         </div>
@@ -80,6 +103,93 @@
                         <p>Arte Fotográfico para Espacios</p>
                     </div>
                 </div>
+                <div class="gallery-item item-frames small section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="./public/assets/images/hero-dji-aerial.jpg" alt="Vista Aérea">
+                    </div>
+                    <div class="item-info">
+                        <h3>Horizontes Sur</h3>
+                        <p>Perspectivas Aéreas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos" class="section bg-surface">
+            <div class="container">
+                <div class="section-header section-fade">
+                    <h2 class="section-title">Producción Audiovisual</h2>
+                    <p class="section-subtitle">Historias en movimiento y cinematografía de autor.</p>
+                </div>
+                <div class="video-grid">
+                    <div class="video-card large section-fade">
+                        <div class="video-container glass-card">
+                            <div class="video-placeholder">
+                                <span class="play-icon">▶</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Cinemática de Paisajes</h3>
+                            <p>Exploración visual en resolución 4K</p>
+                        </div>
+                    </div>
+                    <div class="video-grid-side">
+                        <div class="video-card section-fade">
+                            <div class="video-container glass-card small">
+                                <div class="video-placeholder"></div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Detrás de Cámara</h3>
+                                <p>Proceso creativo</p>
+                            </div>
+                        </div>
+                        <div class="video-card section-fade">
+                            <div class="video-container glass-card small">
+                                <div class="video-placeholder"></div>
+                            </div>
+                            <div class="video-info">
+                                <h3>Highlight Reel</h3>
+                                <p>Eventos 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="container section">
+            <div class="section-header text-center section-fade">
+                <h2 class="section-title">Testimonios</h2>
+                <p class="section-subtitle">Lo que dicen nuestros clientes.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card section-fade">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">El trabajo de Miguel es simplemente excepcional. Logró capturar momentos
+                        que no sabíamos que estaban ocurriendo, con una estética impecable.</p>
+                    <div class="testimonial-author">
+                        <h4>Elena Rodríguez</h4>
+                        <p>Directora de Arte</p>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card section-fade">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Buscábamos algo diferente para nuestra galería y sus cuadros superaron
+                        todas las expectativas. La calidad de impresión es de museo.</p>
+                    <div class="testimonial-author">
+                        <h4>Carlos Méndez</h4>
+                        <p>Arquitecto</p>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card section-fade">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Profesionalismo de principio a fin. Sus videos tienen una narrativa
+                        visual que realmente emociona.</p>
+                    <div class="testimonial-author">
+                        <h4>Laura Soto</h4>
+                        <p>Productora de Eventos</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -102,6 +212,42 @@
                     <div class="stat-item">
                         <span class="stat-number">25+</span>
                         <span class="stat-label">Exposiciones</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instagram" class="section">
+            <div class="container">
+                <div class="section-header section-fade">
+                    <h2 class="section-title">Instagram</h2>
+                    <p class="section-subtitle">Momentos diarios y adelantos de nuevos proyectos. <a href="#"
+                            class="accent-link">@miguel.olivera</a></p>
+                </div>
+                <div class="insta-grid section-fade">
+                    <div class="insta-item">
+                        <div class="insta-overlay"><span>❤ 1.2k</span></div>
+                        <div class="video-placeholder"></div>
+                    </div>
+                    <div class="insta-item">
+                        <div class="insta-overlay"><span>❤ 850</span></div>
+                        <div class="video-placeholder"></div>
+                    </div>
+                    <div class="insta-item">
+                        <div class="insta-overlay"><span>❤ 2.4k</span></div>
+                        <div class="video-placeholder"></div>
+                    </div>
+                    <div class="insta-item">
+                        <div class="insta-overlay"><span>❤ 1.1k</span></div>
+                        <div class="video-placeholder"></div>
+                    </div>
+                    <div class="insta-item">
+                        <div class="insta-overlay"><span>❤ 920</span></div>
+                        <div class="video-placeholder"></div>
+                    </div>
+                    <div class="insta-item">
+                        <div class="insta-overlay"><span>❤ 1.5k</span></div>
+                        <div class="video-placeholder"></div>
                     </div>
                 </div>
             </div>

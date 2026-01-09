@@ -133,4 +133,54 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 8. Hero Carousel Implementation
+    const initHeroCarousel = () => {
+        const carousel = document.querySelector('.hero-carousel');
+        if (!carousel) return;
+
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetInterval();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('.dot');
+
+        const goToSlide = (n) => {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        };
+
+        const nextSlide = () => {
+            goToSlide(currentSlide + 1);
+        };
+
+        const startInterval = () => {
+            slideInterval = setInterval(nextSlide, 6000);
+        };
+
+        const resetInterval = () => {
+            clearInterval(slideInterval);
+            startInterval();
+        };
+
+        startInterval();
+    };
+
+    initHeroCarousel();
 });
