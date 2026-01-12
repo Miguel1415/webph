@@ -105,7 +105,7 @@ section {
 .nav-links a {
     color: var(--text-main);
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     opacity: 0.6;
@@ -249,7 +249,7 @@ section {
 .btn {
     display: inline-block;
     padding: 1.5rem 3rem;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
@@ -374,6 +374,36 @@ section {
     filter: grayscale(0%);
 }
 
+/* Room Mockup for Frames Category */
+.gallery-item[data-category="frames"] .item-inner {
+    background: radial-gradient(circle at center, #2e2e2e 0%, #1a1a1a 100%);
+    padding: 3.5rem;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+    overflow: visible;
+    /* Allow drop shadow to bleed if needed, though padding handles it */
+}
+
+.gallery-item[data-category="frames"] img {
+    border: 15px solid #dfdfdf;
+    /* Matting */
+    outline: 10px solid #1a1a1a;
+    /* Frame */
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.6),
+        inset 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    transform: perspective(1000px) rotateX(1deg);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item[data-category="frames"]:hover img {
+    transform: perspective(1000px) rotateX(0deg) scale(1.02);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.7),
+        inset 0 0 10px rgba(0, 0, 0, 0.1);
+    border-color: #fff;
+}
+
 .item-content {
     padding: 0 1rem;
     transition: var(--transition);
@@ -399,7 +429,7 @@ section {
 .btn-text {
     display: inline-block;
     color: var(--accent);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
@@ -501,8 +531,14 @@ textarea:focus {
 /* Video Section */
 .video-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    align-items: start;
+}
+
+.video-card.large {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .video-grid-side {
@@ -513,9 +549,23 @@ textarea:focus {
 
 .video-container {
     position: relative;
+    width: 100%;
     aspect-ratio: 16/9;
+    /* Force horizontal format */
     overflow: hidden;
-    cursor: pointer;
+    background: var(--bg-surface);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: var(--transition);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    /* Fill container */
+    display: block;
+    object-fit: cover;
+    /* Crop to fill horizontal frame */
 }
 
 .video-container.small {
@@ -560,7 +610,7 @@ textarea:focus {
 }
 
 .video-info p {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -685,7 +735,7 @@ textarea:focus {
 .footer-links a {
     color: var(--text-main);
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     opacity: 0.5;
