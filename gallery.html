@@ -8,8 +8,7 @@
     <meta name="description"
         content="Galería exclusiva de Miguel Olivera. Colección de paisajes aéreos, cuadros de autor y fotografía artística disponible para venta.">
     <!-- Favicon -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📷</text></svg>">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-pro-v2.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,9 +47,25 @@
             <div class="section-header section-fade">
                 <h2 class="section-title">Galería</h2>
                 <div class="gallery-filters">
-                    <button class="filter-btn active" data-filter="all">Todo</button>
-                    <button class="filter-btn" data-filter="landscapes">Paisajes</button>
+                    <button class="filter-btn active" data-filter="landscapes">Paisajes</button>
                     <button class="filter-btn" data-filter="frames">Cuadros</button>
+                    <button class="filter-btn" data-filter="sessions">Sesiones</button>
+                    <div class="filter-dropdown">
+                        <button class="filter-btn dropdown-toggle" data-filter="sports">
+                            Deportiva ▼
+                        </button>
+                        <div class="filter-dropdown-content">
+                            <button class="filter-btn-sub" data-filter="sports" data-subcategory="all">Todos</button>
+                            <button class="filter-btn-sub" data-filter="sports"
+                                data-subcategory="across-andes">Across-Andes</button>
+                            <button class="filter-btn-sub" data-filter="sports" data-subcategory="trail">Trail</button>
+                            <button class="filter-btn-sub" data-filter="sports" data-subcategory="rally">Rally</button>
+                            <button class="filter-btn-sub" data-filter="sports" data-subcategory="bike">Bike</button>
+                        </div>
+                    </div>
+                    <button class="filter-btn" data-filter="wildlife">Fauna</button>
+                    <button class="filter-btn" data-filter="family">Familiar</button>
+                    <button class="filter-btn" data-filter="products">Productos</button>
                 </div>
             </div>
 
@@ -67,67 +82,69 @@
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-02.jpg" alt="Paisaje Aéreo 1">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-02.jpg" alt="Paisaje Aéreo 1">
                     </div>
                     <div class="item-content">
-                        <h3>Paisaje Aéreo 1</h3>
-                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <h3>Ríos de Montaña</h3>
+                        <p class="collection-desc">Curvas sinuosas de agua cristalina atravesando valles ancestrales.
+                        </p>
                         <a href="#" class="btn-text">Ver Detalles</a>
                     </div>
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-03.jpg" alt="Paisaje Aéreo 2">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-03.jpg" alt="Paisaje Aéreo 2">
                     </div>
                     <div class="item-content">
-                        <h3>Paisaje Aéreo 2</h3>
-                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <h3>Texturas Naturales</h3>
+                        <p class="collection-desc">Patrones geológicos que cuentan millones de años de historia.</p>
                         <a href="#" class="btn-text">Ver Detalles</a>
                     </div>
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-04.jpg" alt="Paisaje Aéreo 3">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-04.jpg" alt="Paisaje Aéreo 3">
                     </div>
                     <div class="item-content">
-                        <h3>Paisaje Aéreo 3</h3>
-                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <h3>Cordillera Infinita</h3>
+                        <p class="collection-desc">Cumbres nevadas que se pierden en el horizonte patagónico.</p>
                         <a href="#" class="btn-text">Ver Detalles</a>
                     </div>
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-05.jpg" alt="Paisaje Aéreo 4">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-05.jpg" alt="Paisaje Aéreo 4">
                     </div>
                     <div class="item-content">
-                        <h3>Paisaje Aéreo 4</h3>
-                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <h3>Bosque Austral</h3>
+                        <p class="collection-desc">Verde intenso de la selva valdiviana vista desde el cielo.</p>
                         <a href="#" class="btn-text">Ver Detalles</a>
                     </div>
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-06.jpg" alt="Paisaje Aéreo 5">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-06.jpg" alt="Paisaje Aéreo 5">
                     </div>
                     <div class="item-content">
-                        <h3>Paisaje Aéreo 5</h3>
-                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <h3>Lagos Glaciares</h3>
+                        <p class="collection-desc">Aguas turquesas alimentadas por el deshielo de antiguos glaciares.
+                        </p>
                         <a href="#" class="btn-text">Ver Detalles</a>
                     </div>
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-07.jpg" alt="Paisaje Aéreo 6">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-07.jpg" alt="Paisaje Aéreo 6">
                     </div>
                     <div class="item-content">
-                        <h3>Paisaje Aéreo 6</h3>
-                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <h3>Volcanes Dormidos</h3>
+                        <p class="collection-desc">Gigantes silenciosos que dominan el paisaje andino.</p>
                         <a href="#" class="btn-text">Ver Detalles</a>
                     </div>
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-08.jpg" alt="Paisaje Aéreo 7">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-08.jpg" alt="Paisaje Aéreo 7">
                     </div>
                     <div class="item-content">
                         <h3>Paisaje Aéreo 7</h3>
@@ -137,7 +154,7 @@
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-09.jpg" alt="Paisaje Aéreo 8">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-09.jpg" alt="Paisaje Aéreo 8">
                     </div>
                     <div class="item-content">
                         <h3>Paisaje Aéreo 8</h3>
@@ -147,7 +164,7 @@
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-10.jpg" alt="Paisaje Aéreo 9">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-10.jpg" alt="Paisaje Aéreo 9">
                     </div>
                     <div class="item-content">
                         <h3>Paisaje Aéreo 9</h3>
@@ -157,10 +174,80 @@
                 </div>
                 <div class="gallery-item section-fade" data-category="landscapes">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-11.jpg" alt="Paisaje Aéreo 10">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-11.jpg" alt="Paisaje Aéreo 10">
                     </div>
                     <div class="item-content">
                         <h3>Paisaje Aéreo 10</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-12.jpg" alt="Paisaje Aéreo 11">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 11</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-13.jpg" alt="Paisaje Aéreo 12">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 12</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-14.jpg" alt="Paisaje Aéreo 13">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 13</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-16.jpg" alt="Paisaje Aéreo 14">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 14</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-17.jpg" alt="Paisaje Aéreo 15">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 15</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-18.jpg" alt="Paisaje Aéreo 16">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 16</h3>
+                        <p class="collection-desc">La inmensidad desde las alturas.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="landscapes">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-19.jpg" alt="Paisaje Aéreo 17">
+                    </div>
+                    <div class="item-content">
+                        <h3>Paisaje Aéreo 17</h3>
                         <p class="collection-desc">La inmensidad desde las alturas.</p>
                         <a href="#" class="btn-text">Ver Detalles</a>
                     </div>
@@ -235,16 +322,243 @@
                         <a href="#" class="btn-text">Ver Detalles</a>
                     </div>
                 </div>
-                <div class="gallery-item section-fade" data-category="frames">
+
+                <!-- New Categories -->
+                <div class="gallery-item section-fade" data-category="sessions">
                     <div class="item-inner">
-                        <img src="./public/assets/images/Galeria/gallery-img-19.jpg" alt="Perspectiva Natural 8">
+                        <img src="/assets/images/Galeria/sesiones/DSC_0140.jpg" alt="Sesión de Retrato 1">
                     </div>
                     <div class="item-content">
-                        <h3>Perspectiva Natural 8</h3>
-                        <p class="collection-desc">Detalles que cuentan historias.</p>
+                        <h3>Sesión de Retrato</h3>
+                        <p class="collection-desc">Capturando la personalidad única.</p>
                         <a href="#" class="btn-text">Ver Detalles</a>
                     </div>
                 </div>
+                <div class="gallery-item section-fade" data-category="sessions">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/sesiones/DSC_3641-2.jpg" alt="Sesión de Retrato 2">
+                    </div>
+                    <div class="item-content">
+                        <h3>Sesión de Retrato</h3>
+                        <p class="collection-desc">Capturando la personalidad única.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sessions">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/sesiones/DSC_4766.jpg" alt="Sesión de Retrato 3">
+                    </div>
+                    <div class="item-content">
+                        <h3>Sesión de Retrato</h3>
+                        <p class="collection-desc">Capturando la personalidad única.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sessions">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/sesiones/WhatsApp Image 2024-10-01 at 10.21.23.jpg"
+                            alt="Sesión de Retrato 4">
+                    </div>
+                    <div class="item-content">
+                        <h3>Sesión de Retrato</h3>
+                        <p class="collection-desc">Capturando la personalidad única.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sessions">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/sesiones/WhatsApp Image 2024-10-01 at 10.21.36.jpg"
+                            alt="Sesión de Retrato 5">
+                    </div>
+                    <div class="item-content">
+                        <h3>Sesión de Retrato</h3>
+                        <p class="collection-desc">Capturando la personalidad única.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Sports Categories -->
+                <!-- Across-Andes -->
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="across-andes">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/across andes/DSC_4549.jpg" alt="Across-Andes 1">
+                    </div>
+                    <div class="item-content">
+                        <h3>Across-Andes</h3>
+                        <p class="collection-desc">Aventura extrema en los Andes.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="across-andes">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/across andes/DSC_4656.jpg" alt="Across-Andes 2">
+                    </div>
+                    <div class="item-content">
+                        <h3>Across-Andes</h3>
+                        <p class="collection-desc">Aventura extrema en los Andes.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="across-andes">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/across andes/DSC_4658.jpg" alt="Across-Andes 3">
+                    </div>
+                    <div class="item-content">
+                        <h3>Across-Andes</h3>
+                        <p class="collection-desc">Aventura extrema en los Andes.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="across-andes">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/across andes/DSC_4678.jpg" alt="Across-Andes 4">
+                    </div>
+                    <div class="item-content">
+                        <h3>Across-Andes</h3>
+                        <p class="collection-desc">Aventura extrema en los Andes.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="across-andes">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/across andes/DSC_4697.jpg" alt="Across-Andes 5">
+                    </div>
+                    <div class="item-content">
+                        <h3>Across-Andes</h3>
+                        <p class="collection-desc">Aventura extrema en los Andes.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Trail -->
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="trail">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/trail/DSC_0963.jpg" alt="Trail Running 1">
+                    </div>
+                    <div class="item-content">
+                        <h3>Trail Running</h3>
+                        <p class="collection-desc">Corriendo por la naturaleza.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="trail">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/trail/DSC_1573.jpg" alt="Trail Running 2">
+                    </div>
+                    <div class="item-content">
+                        <h3>Trail Running</h3>
+                        <p class="collection-desc">Corriendo por la naturaleza.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="trail">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/trail/DSC_1709-2.jpg" alt="Trail Running 3">
+                    </div>
+                    <div class="item-content">
+                        <h3>Trail Running</h3>
+                        <p class="collection-desc">Corriendo por la naturaleza.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Rally -->
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="rally">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/rally/1725342393151.jpg" alt="Rally 1">
+                    </div>
+                    <div class="item-content">
+                        <h3>Rally</h3>
+                        <p class="collection-desc">Velocidad y adrenalina.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="rally">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/rally/1725342393181.jpg" alt="Rally 2">
+                    </div>
+                    <div class="item-content">
+                        <h3>Rally</h3>
+                        <p class="collection-desc">Velocidad y adrenalina.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Bike -->
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="bike">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/bici/DSC_5883.jpg" alt="Mountain Bike 1">
+                    </div>
+                    <div class="item-content">
+                        <h3>Mountain Bike</h3>
+                        <p class="collection-desc">Ciclismo de montaña.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="sports" data-subcategory="bike">
+                    <div class="item-inner">
+                        <img src="/assets/images/deportiva/bici/DSC_6405.jpg" alt="Mountain Bike 2">
+                    </div>
+                    <div class="item-content">
+                        <h3>Mountain Bike</h3>
+                        <p class="collection-desc">Ciclismo de montaña.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item section-fade" data-category="wildlife">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/fauna/gallery-img-01.jpg" alt="Fauna Silvestre 1">
+                    </div>
+                    <div class="item-content">
+                        <h3>Vida Silvestre</h3>
+                        <p class="collection-desc">Naturaleza en su estado puro.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="gallery-item section-fade" data-category="wildlife">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/fauna/gallery-img-15.jpg" alt="Fauna Silvestre 2">
+                    </div>
+                    <div class="item-content">
+                        <h3>Vida Silvestre</h3>
+                        <p class="collection-desc">Naturaleza en su estado puro.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item section-fade" data-category="family">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/gallery-img-01.jpg" alt="Momentos Familiares">
+                    </div>
+                    <div class="item-content">
+                        <h3>Lazos Familiares</h3>
+                        <p class="collection-desc">Recuerdos para toda la vida.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item section-fade" data-category="products">
+                    <div class="item-inner">
+                        <img src="/assets/images/Galeria/gallery-img-02.jpg" alt="Fotografía de Producto">
+                    </div>
+                    <div class="item-content">
+                        <h3>Producto Comercial</h3>
+                        <p class="collection-desc">Destacando cada detalle.</p>
+                        <a href="#" class="btn-text">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item section-fade" data-category="frames">
+                <div class="item-inner">
+                    <img src="/assets/images/Galeria/gallery-img-19.jpg" alt="Perspectiva Natural 8">
+                </div>
+                <div class="item-content">
+                    <h3>Perspectiva Natural 8</h3>
+                    <p class="collection-desc">Detalles que cuentan historias.</p>
+                    <a href="#" class="btn-text">Ver Detalles</a>
+                </div>
+            </div>
             </div>
         </section>
 
