@@ -27,3 +27,16 @@ Esta tarea abarca un conjunto de mejoras técnicas y visuales destinadas a eleva
 ## Notas Técnicas
 - Se utilizó un SVG inline para el favicon para minimizar peticiones HTTP.
 - Se actualizaron `index.html` y `gallery.html` manteniendo la consistencia de estilos.
+
+# Ticket: Fix Gallery 404 (Build Config)
+**ID:** TSK-005
+**Estado:** En Progreso
+**Prioridad:** Crítica
+
+## Descripción
+El despliegue en Vercel devuelve un error 404 al intentar acceder a `/gallery.html`. Esto se debe a que Vite, por defecto, solo incluye `index.html` en el build final si no se especifica lo contrario.
+
+## Solución
+- [x] Crear `vite.config.js`.
+- [x] Configurar `rollupOptions.input` para incluir tanto `index.html` como `gallery.html`.
+
