@@ -40,25 +40,83 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // 4. Gallery Filtering with Smooth Transitions
+    // 4. Gallery Filtering with Dropdown Support
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const filterBtnsSub = document.querySelectorAll('.filter-btn-sub');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
+    // Dropdown toggle functionality
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const dropdown = toggle.closest('.filter-dropdown');
+
+            // Close other dropdowns first
+            document.querySelectorAll('.filter-dropdown').forEach(d => {
+                if (d !== dropdown) d.classList.remove('active');
+            });
+
+            // Toggle active state
+            dropdown.classList.toggle('active');
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.filter-dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    });
+
+    // Main filter buttons
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            if (btn.classList.contains('dropdown-toggle')) return; // Skip dropdown toggles
+
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             const filter = btn.dataset.filter;
 
             galleryItems.forEach(item => {
-                // Remove direct style changes to avoid conflict with CSS transitions if possible?
-                // But we need to hide them. 
-                // We keep the transition logic but fix the display property.
                 item.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
 
                 if (filter === 'all' || item.dataset.category === filter) {
-                    item.style.display = ''; // Revert to CSS (flex/grid item)
+                    item.style.display = '';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0) scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(30px) scale(0.95)';
+                    setTimeout(() => item.style.display = 'none', 600);
+                }
+            });
+        });
+    });
+
+    // Subcategory filter buttons
+    filterBtnsSub.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            // Remove active from all subcategory buttons
+            filterBtnsSub.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+            const subcategory = btn.dataset.subcategory;
+
+            galleryItems.forEach(item => {
+                item.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+
+                const matchesCategory = item.dataset.category === filter;
+                const matchesSubcategory = subcategory === 'all' || item.dataset.subcategory === subcategory;
+
+                if (matchesCategory && matchesSubcategory) {
+                    item.style.display = '';
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'translateY(0) scale(1)';

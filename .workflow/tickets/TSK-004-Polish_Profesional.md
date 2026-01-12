@@ -40,3 +40,21 @@ El despliegue en Vercel devuelve un error 404 al intentar acceder a `/gallery.ht
 - [x] Crear `vite.config.js`.
 - [x] Configurar `rollupOptions.input` para incluir tanto `index.html` como `gallery.html`.
 
+# Ticket: Custom Logo Integration
+**ID:** TSK-006
+**Estado:** En Progreso
+**Prioridad:** Alta
+
+## Requerimientos
+- [x] Mover imagen subida a `public/assets/images/logo-camera.png`.
+- [x] Actualizar Favicon en `index.html` y `gallery.html`.
+- [x] Mover imagen subida a `public/assets/images/logo-camera.png`.
+- [x] Actualizar Favicon en `index.html` y `gallery.html`.
+- [x] Insertar logo en Navbar (REVERTIDO a petición del usuario).
+- [x] Eliminar fondo rectangular del logo (No aplicable).
+- [x] Reducir tamaño título Hero y botones (30%).
+- [ ] Implementar nuevo Favicon Profesional (favicon-pro.png).
+- [x] Reemplazar Favicon por imagen V2 (favicon-pro-v2.png) a petición del usuario.
+- [x] Actualizar sección "Nosotros" a "Sobre Mí" con nuevo texto.
+- [ ] Eliminar efecto visual "Cuadro de Pared" (Frames Mockup).
+- [x] Reemplazar Favicon por imagen V2 (favicon-pro-v2.png) a petición del usuario.
