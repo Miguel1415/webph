@@ -52,9 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = btn.dataset.filter;
 
             galleryItems.forEach(item => {
+                // Remove direct style changes to avoid conflict with CSS transitions if possible?
+                // But we need to hide them. 
+                // We keep the transition logic but fix the display property.
                 item.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+
                 if (filter === 'all' || item.dataset.category === filter) {
-                    item.style.display = 'block';
+                    item.style.display = ''; // Revert to CSS (flex/grid item)
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'translateY(0) scale(1)';

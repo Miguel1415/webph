@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual Studio | Fotografía de Autor</title>
     <meta name="description"
-        content="Fotografía profesional de eventos y venta de cuadros exclusivos por Miguel Olivera.">
+        content="Miguel Olivera: Fotografía de autor, paisajes 4K y producción audiovisual profesional. Capturando la esencia de eventos y naturaleza.">
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📷</text></svg>">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +26,7 @@
             <a href="#" class="logo">Miguel Olivera Labrin</a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#hero">Inicio</a></li>
-                <li><a href="#gallery">Galería</a></li>
+                <li><a href="gallery.html">Galería</a></li>
                 <li><a href="#videos">Videos</a></li>
                 <li><a href="#testimonials">Testimonios</a></li>
                 <li><a href="#about">Nosotros</a></li>
@@ -63,7 +66,7 @@
             <p class="reveal-text">Fotografía de Autor</p>
             <h1 class="reveal-text delay-1">Capturando la <span>Esencia</span></h1>
             <div class="hero-actions reveal-text delay-2">
-                <a href="#gallery" class="btn btn-primary">Ver Portafolio</a>
+                <a href="gallery.html" class="btn btn-primary">Ver Portafolio</a>
                 <a href="#contact" class="btn btn-outline">Reservar Sesión</a>
             </div>
         </div>
@@ -74,46 +77,7 @@
     </header>
 
     <main>
-        <section id="gallery" class="container section">
-            <div class="section-header section-fade">
-                <h2 class="section-title">Portafolio Seleccionado</h2>
-                <div class="gallery-filters">
-                    <button class="filter-btn active" data-filter="all">Todo</button>
-                    <button class="filter-btn" data-filter="events">Eventos</button>
-                    <button class="filter-btn" data-filter="frames">Cuadros</button>
-                </div>
-            </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-item item-events section-fade" data-category="events">
-                    <div class="item-inner">
-                        <img src="./public/assets/images/event-1.png" alt="Fotografía de Evento">
-                    </div>
-                    <div class="item-info">
-                        <h3>Celebraciones</h3>
-                        <p>Eventos Sociales & Privados</p>
-                    </div>
-                </div>
-                <div class="gallery-item item-frames large section-fade" data-category="frames">
-                    <div class="item-inner">
-                        <img src="./public/assets/images/frame-1.png" alt="Cuadros de Autor">
-                    </div>
-                    <div class="item-info">
-                        <h3>Paisajes Minimales</h3>
-                        <p>Arte Fotográfico para Espacios</p>
-                    </div>
-                </div>
-                <div class="gallery-item item-frames small section-fade" data-category="landscapes">
-                    <div class="item-inner">
-                        <img src="./public/assets/images/hero-dji-aerial.jpg" alt="Vista Aérea">
-                    </div>
-                    <div class="item-info">
-                        <h3>Horizontes Sur</h3>
-                        <p>Perspectivas Aéreas</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section id="videos" class="section bg-surface">
             <div class="container">
@@ -124,9 +88,7 @@
                 <div class="video-grid">
                     <div class="video-card large section-fade">
                         <div class="video-container glass-card">
-                            <div class="video-placeholder">
-                                <span class="play-icon">▶</span>
-                            </div>
+                            <video src="./public/videos/RIO PEULLA.mp4" controls loop muted playsinline></video>
                         </div>
                         <div class="video-info">
                             <h3>Cinemática de Paisajes</h3>
@@ -197,11 +159,10 @@
             <div class="container split-layout">
                 <div class="about-text section-fade">
                     <h2 class="section-title">La Visión Tras el Lente</h2>
-                    <p>Con más de una década dedicada al arte visual, mi trabajo no se limita a capturar imágenes, sino
+                    <p>Mi trabajo no se limita a capturar imágenes, sino
                         a documentar legados. Mi enfoque combina la precisión técnica con la sensibilidad artística,
                         utilizando la luz natural como principal aliada.</p>
-                    <p>Especializado en eventos de alto standing y fotografía de autor para espacios arquitectónicos y
-                        corporativos. Cada pieza de mi colección de cuadros es el resultado de un viaje, una espera
+                    <p>Cada pieza de mi colección de cuadros es el resultado de un viaje, una espera
                         paciente y un momento único de conexión con el entorno.</p>
                 </div>
                 <div class="about-stats section-fade">
@@ -221,7 +182,8 @@
             <div class="container">
                 <div class="section-header section-fade">
                     <h2 class="section-title">Instagram</h2>
-                    <p class="section-subtitle">Momentos diarios y adelantos de nuevos proyectos. <a href="#"
+                    <p class="section-subtitle">Momentos diarios y adelantos de nuevos proyectos. <a
+                            href="https://www.instagram.com/miguel.olivera" target="_blank" rel="noopener noreferrer"
                             class="accent-link">@miguel.olivera</a></p>
                 </div>
                 <div class="insta-grid section-fade">
@@ -256,7 +218,7 @@
         <section id="contact" class="container section">
             <div class="contact-box glass-card section-fade">
                 <h2 class="section-title">¿Tienes un proyecto?</h2>
-                <p>Escríbenos para agendar tu sesión o consultar por cuadros personalizados.</p>
+                <p>Escríbenos para agendar tu sesión o consultar por cuadros.</p>
                 <form id="contact-form">
                     <div class="form-group">
                         <input type="text" placeholder="Tu Nombre" required>
@@ -278,14 +240,14 @@
             <p>&copy; 2026 Visual Studio - Miguel Olivera. Todos los derechos reservados.</p>
             <div class="footer-links">
                 <a href="#hero">Inicio</a>
-                <a href="#gallery">Galería</a>
+                <a href="gallery.html">Galería</a>
                 <a href="#about">Nosotros</a>
                 <a href="#contact">Contacto</a>
             </div>
             <div class="social-links">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">LinkedIn</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </div>
     </footer>
