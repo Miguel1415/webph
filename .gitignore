@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# build output
+/dist/
+
+# dependencies
+/node_modules
+
+# misc
+.DS_Store
+*.log
+*.swp
+.env
+.env.local
+.env.*.local
+
+# Gemini specific
+.gemini/
+output.txt

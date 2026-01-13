@@ -45,6 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtnsSub = document.querySelectorAll('.filter-btn-sub');
     const galleryItems = document.querySelectorAll('.gallery-item');
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    const descriptions = document.querySelectorAll('.description');
+
+    const updateDescription = (filter) => {
+        descriptions.forEach(desc => {
+            if (desc.dataset.description === filter) {
+                desc.classList.add('active');
+            } else {
+                desc.classList.remove('active');
+            }
+        });
+    };
+
 
     // Dropdown toggle functionality
     dropdownToggles.forEach(toggle => {
@@ -59,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Toggle active state
             dropdown.classList.toggle('active');
+            if(dropdown.classList.contains('active')) {
+                updateDescription(toggle.dataset.filter);
+            }
         });
     });
 
@@ -78,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
 
             const filter = btn.dataset.filter;
+            updateDescription(filter);
 
             galleryItems.forEach(item => {
                 item.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
@@ -108,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const filter = btn.dataset.filter;
             const subcategory = btn.dataset.subcategory;
+            updateDescription(subcategory);
 
             galleryItems.forEach(item => {
                 item.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';

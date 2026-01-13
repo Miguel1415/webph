@@ -23,7 +23,7 @@ def crop_transparent_borders(image_path):
         print(f"Error cropping image: {e}")
 
 if __name__ == "__main__":
-    target_file = './public/assets/images/favicon-pro.png'
+    target_file = './assets/images/favicon-pro.png'
     if os.path.exists(target_file):
         crop_transparent_borders(target_file)
     else:

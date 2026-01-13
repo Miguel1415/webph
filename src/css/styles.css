@@ -402,11 +402,31 @@ section {
     background: var(--glass-bg);
 }
 
+.gallery-descriptions {
+    margin-top: -13rem;
+    margin-bottom: 5rem;
+    position: relative;
+    height: 100px;
+}
+
+.description {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+.description.active {
+    opacity: 1;
+}
+
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 6rem 4rem;
-    /* More vertical gap */
+    gap: 3rem 2rem;
 }
 
 .gallery-item {
@@ -416,8 +436,7 @@ section {
 }
 
 .gallery-item:nth-child(even) {
-    margin-top: 8rem;
-    /* Start stagger effect */
+    margin-top: 0;
 }
 
 .item-inner {
@@ -430,9 +449,7 @@ section {
 .gallery-item img {
     width: 100%;
     height: auto;
-    aspect-ratio: 3/2;
-    /* Landscape ratio as per reference */
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
     display: block;
     filter: grayscale(10%);
@@ -614,8 +631,8 @@ textarea:focus {
     height: 100%;
     /* Fill container */
     display: block;
-    object-fit: cover;
-    /* Crop to fill horizontal frame */
+    object-fit: contain;
+    /* Ensure entire video is visible */
 }
 
 .video-container.small {
@@ -708,6 +725,28 @@ textarea:focus {
     color: var(--text-muted);
     text-transform: uppercase;
 }
+
+.client-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--accent);
+}
+
+.about-image {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto 2rem auto;
+    /* Center it and add bottom margin */
+    border-radius: 8px;
+    /* Slightly rounded corners for a professional look */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Soft shadow for depth */
+}
+
 
 /* Instagram Feed */
 .insta-grid {

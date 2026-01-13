@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio | Videos</title>
+    <meta name="description"
+        content="Miguel Olivera: Galería de videos profesionales y cinematografía de autor.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon-pro-v2.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;500;700&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+
+<body class="dark-theme">
+    <nav id="navbar" class="glass-effect">
+        <div class="container nav-content">
+            <a href="#" class="logo">Miguel Olivera Labrin</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#hero">Inicio</a></li>
+                <li><a href="gallery.html">Galería</a></li>
+                <li><a href="videos.html" class="active">Videos</a></li>
+                <li><a href="index.html#testimonials">Testimonios</a></li>
+                <li><a href="index.html#about">Sobre Mí</a></li>
+                <li><a href="index.html#instagram">Instagram</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="header-spacer" style="height: var(--nav-height);"></div>
+
+    <main>
+        <section id="videos-page" class="container section">
+            <div class="section-header section-fade">
+                <h2 class="section-title">Nuestros Videos</h2>
+                <p class="section-subtitle">Explora nuestra colección de cinematografía y proyectos audiovisuales.</p>
+            </div>
+            <div class="video-grid">
+                <!-- Videos will be loaded here -->
+                <div class="video-card large section-fade">
+                    <div class="video-container glass-card">
+                        <video src="/videos/RIO PEULLA.mp4" controls loop muted playsinline></video>
+                    </div>
+                    <div class="video-info">
+                        <h3>Cinemática de Paisajes</h3>
+                        <p>Exploración visual en resolución 4K</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Visual Studio - Miguel Olivera. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="index.html#hero">Inicio</a>
+                <a href="gallery.html">Galería</a>
+                <a href="index.html#about">Nosotros</a>
+                <a href="index.html#contact">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/migueledua17" target="_blank" rel="noopener noreferrer">@migueledua17</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>
