@@ -258,6 +258,7 @@ section {
     cursor: pointer;
     transition: var(--transition);
     border: none;
+    border-radius: 5px;
 }
 
 .btn-primary {
