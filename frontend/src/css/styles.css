@@ -762,7 +762,7 @@ textarea:focus {
 /* Testimonials */
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem;
     margin-top: 4rem;
 }
@@ -809,6 +809,25 @@ textarea:focus {
     object-fit: cover;
     margin-bottom: 1rem;
     border: 2px solid var(--accent);
+}
+
+.client-photo-placeholder {
+    width: 102px;
+    height: 102px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid var(--text-muted);
+    background: var(--glass-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.client-photo-placeholder::before {
+    content: '👤';
+    font-size: 2.5rem;
+    opacity: 0.3;
 }
 
 .about-image {
@@ -915,6 +934,82 @@ textarea:focus {
     color: var(--text-muted);
     text-decoration: none;
     font-size: 0.8rem;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    display: block;
+    opacity: 1;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: var(--accent);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 20px 0;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .lightbox-content {
+        max-width: 95%;
+    }
 }
 
 /* Animations */
@@ -1058,4 +1153,26 @@ textarea:focus {
     .insta-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* TSK-009: Estilos para el contenedor de videos de YouTube embebidos */
+/* YouTube Video Container */
+.video-container-yt {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    background: var(--bg-surface);
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+}
+
+.video-container-yt iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }

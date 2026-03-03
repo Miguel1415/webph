@@ -1,3 +1,8 @@
+<!--
+    @file videos.html
+    @description Página de la galería de videos del portfolio AuraPH.
+    @author Miguel Olivera Labrin
+-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,8 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual Studio | Videos</title>
-    <meta name="description"
-        content="Miguel Olivera: Galería de videos profesionales y cinematografía de autor.">
+    <meta name="description" content="Miguel Olivera: Galería de videos profesionales y cinematografía de autor.">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/images/favicon-pro-v2.png">
     <!-- Google Fonts -->
@@ -50,15 +54,16 @@
                 <h2 class="section-title">Nuestros Videos</h2>
                 <p class="section-subtitle">Explora nuestra colección de cinematografía y proyectos audiovisuales.</p>
             </div>
+            <!-- TSK-009: Reemplazo de videos locales por videos de YouTube embebidos -->
             <div class="video-grid">
-                <!-- Videos will be loaded here -->
+                <!-- Videos embebidos desde YouTube -->
                 <div class="video-card section-fade">
-                    <div class="video-container glass-card">
-                        <video src="/videos/RIO PEULLA.mp4" muted playsinline></video>
-                        <div class="custom-video-controls">
-                            <button class="play-pause-btn"><i class="fas fa-play"></i></button>
-                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
-                        </div>
+                    <div class="video-container-yt glass-card">
+                        <iframe src="https://www.youtube.com/embed/CxwJ7aFYFFA"
+                            title="Río Peulla - Cinemática de Paisajes en 4K" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen loading="lazy">
+                        </iframe>
                     </div>
                     <div class="video-info">
                         <h3>Río Peulla</h3>
@@ -66,12 +71,12 @@
                     </div>
                 </div>
                 <div class="video-card section-fade">
-                    <div class="video-container glass-card">
-                        <video src="/videos/Sin título 2.mp4" muted playsinline></video>
-                        <div class="custom-video-controls">
-                            <button class="play-pause-btn"><i class="fas fa-play"></i></button>
-                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
-                        </div>
+                    <div class="video-container-yt glass-card">
+                        <iframe src="https://www.youtube.com/embed/4K_P_Lq_0sU"
+                            title="Bosque de Coihues - Naturaleza en Movimiento" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen loading="lazy">
+                        </iframe>
                     </div>
                     <div class="video-info">
                         <h3>Bosque de Coihues</h3>
@@ -79,12 +84,12 @@
                     </div>
                 </div>
                 <div class="video-card section-fade">
-                    <div class="video-container glass-card">
-                        <video src="/videos/winterForest.mp4" muted playsinline></video>
-                        <div class="custom-video-controls">
-                            <button class="play-pause-btn"><i class="fas fa-play"></i></button>
-                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
-                        </div>
+                    <div class="video-container-yt glass-card">
+                        <iframe src="https://www.youtube.com/embed/zFxCRy-c_5I"
+                            title="Invierno en el Bosque - Exploración Invernal" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen loading="lazy">
+                        </iframe>
                     </div>
                     <div class="video-info">
                         <h3>Invierno en el Bosque</h3>
