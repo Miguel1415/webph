@@ -41,25 +41,8 @@
     </nav>
 
     <header id="hero" class="full-height section-fade">
-        <div class="hero-carousel">
-            <div class="carousel-slide active"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/images/carrousel/aerial-valley-sunset.jpg');">
-            </div>
-            <div class="carousel-slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/images/carrousel/aerial-river-delta.jpg');">
-            </div>
-            <div class="carousel-slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/images/carrousel/aerial-forest-lake.jpg');">
-            </div>
-            <div class="carousel-slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/images/carrousel/aerial-river-braided.jpg');">
-            </div>
-            <div class="carousel-slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/images/carrousel/nature-island-detail.jpg');">
-            </div>
-            <div class="carousel-slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/images/carrousel/mountain-snow-peaks.jpg');">
-            </div>
+        <div class="hero-carousel" id="hero-carousel">
+            <!-- Se cargará dinámicamente -->
         </div>
         <div class="container hero-content">
             <p class="reveal-text">Fotografía de Autor</p>
@@ -83,67 +66,8 @@
                 <h2 class="section-title">Nuestra Galería</h2>
                 <p class="section-subtitle">Una mirada a nuestro trabajo fotográfico más destacado.</p>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item section-fade">
-                    <div class="item-inner">
-                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-02.jpg" alt="Paisaje Aéreo">
-                    </div>
-                    <div class="item-content">
-                        <h3>Ríos de Montaña</h3>
-                        <p class="collection-desc">Valles ancestrales.</p>
-                        <a href="gallery.html" class="btn-text">Ver Detalles</a>
-                    </div>
-                </div>
-                <div class="gallery-item section-fade">
-                    <div class="item-inner">
-                        <img src="/assets/images/Galeria/sesiones/DSC_3641-2.jpg" alt="Sesión en Exteriores">
-                    </div>
-                    <div class="item-content">
-                        <h3>Sesión en Exteriores</h3>
-                        <p class="collection-desc">Retrato fresco y espontáneo.</p>
-                        <a href="gallery.html" class="btn-text">Ver Detalles</a>
-                    </div>
-                </div>
-                <div class="gallery-item section-fade">
-                    <div class="item-inner">
-                        <img src="/assets/images/deportiva/trail/DSC_7608.jpg" alt="Trail Running">
-                    </div>
-                    <div class="item-content">
-                        <h3>Trail Running</h3>
-                        <p class="collection-desc">Corriendo por la naturaleza.</p>
-                        <a href="gallery.html" class="btn-text">Ver Detalles</a>
-                    </div>
-                </div>
-                <div class="gallery-item section-fade">
-                    <div class="item-inner">
-                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-05.jpg" alt="Bosque Austral">
-                    </div>
-                    <div class="item-content">
-                        <h3>Bosque Austral</h3>
-                        <p class="collection-desc">Selva valdiviana desde el cielo.</p>
-                        <a href="gallery.html" class="btn-text">Ver Detalles</a>
-                    </div>
-                </div>
-                <div class="gallery-item section-fade">
-                    <div class="item-inner">
-                        <img src="/assets/images/Galeria/fauna/paisajes/gallery-img-10.jpg" alt="Paisaje Aéreo">
-                    </div>
-                    <div class="item-content">
-                        <h3>Paisaje Aéreo</h3>
-                        <p class="collection-desc">La inmensidad desde las alturas.</p>
-                        <a href="gallery.html" class="btn-text">Ver Detalles</a>
-                    </div>
-                </div>
-                <div class="gallery-item section-fade">
-                    <div class="item-inner">
-                        <img src="/assets/images/Galeria/sesiones/WhatsApp Image 2024-10-01 at 10.21.36.jpg" alt="Juego de Sombras">
-                    </div>
-                    <div class="item-content">
-                        <h3>Juego de Sombras</h3>
-                        <p class="collection-desc">Retrato artístico.</p>
-                        <a href="gallery.html" class="btn-text">Ver Detalles</a>
-                    </div>
-                </div>
+            <div class="gallery-grid" id="featured-grid">
+                <!-- Se cargará dinámicamente -->
             </div>
             <div class="text-center" style="margin-top: 4rem;">
                 <a href="gallery.html" class="btn btn-primary">Ver Galería Completa</a>
@@ -223,8 +147,9 @@
                     </div>
                 </div>
                 <div class="testimonial-card glass-card section-fade">
-                                            <img src="/assets/images/clientes/Hugo_Fernanadez.png" alt="Foto de Hugo Fernandez"
-                                            class="client-photo">                    <div class="quote-icon">"</div>
+                    <img src="/assets/images/clientes/Hugo_Fernanadez.png" alt="Foto de Hugo Fernandez"
+                        class="client-photo">
+                    <div class="quote-icon">"</div>
                     <p class="testimonial-text">“Quedamos encantados con la sesión fotográfica de la revelación de
                         género para nuestro bebé, muy talentoso y apasionado por lo que hace, las fotos están hermosas y
                         reflejan las emociones que vivimos en ese momento. Agradecidos por el profesionalismo y
@@ -233,6 +158,29 @@
                     <div class="testimonial-author">
                         <h4>Hugo Fernandez</h4>
                         <p>Revelacion de Genero</p>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card section-fade">
+                    <div class="client-photo-placeholder"></div>
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">“ Miguel es un gran fotógrafo, tiene una paciencia infinita y esto quedó
+                        demostrado en nuestro babyshower en el cual fotografió todos los momentos de este y además
+                        fotografiar a los invitados ! Agradecemos mucho su trabajo, ya que nos queda un hermoso recuerdo
+                        tanto de nuestra sesión de fotos como de la celebración de la llegada de nuestra hija ! “</p>
+                    <div class="testimonial-author">
+                        <h4>Maria Soledad Villablanca</h4>
+                        <p>Baby Shower</p>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card section-fade">
+                    <div class="client-photo-placeholder"></div>
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">“ Muchas gracias por su hermoso trabajo realizado.. Marco y MILLELE
+                        estamos muy agradecidos... Muchas vendiciones y mucho éxito... Muchas gracias por el video...
+                        Estamos muy agradecidos, su trabajo es extraordinario “</p>
+                    <div class="testimonial-author">
+                        <h4>Marco y Millele</h4>
+                        <p>Evento Especial</p>
                     </div>
                 </div>
             </div>
@@ -252,12 +200,19 @@
                 </div>
                 <div class="about-stats section-fade">
                     <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Eventos de Prestigio</span>
+                        <span class="stat-number">Fotografías deportivas</span>
+                        <span class="stat-label">Trail,</span>
+                        <span class="stat-label">Bike,</span>
+                        <span class="stat-label">Rally,</span>
+                        <span class="stat-label">Volleyball</span>
+
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">25+</span>
-                        <span class="stat-label">Exposiciones</span>
+                        <span class="stat-number">Eventos+</span>
+                        <span class="stat-label">Bodas,</span>
+                        <span class="stat-label">Eventos Familiares,</span>
+                        <span class="stat-label">Eventos Corporativos,</span>
+                        <span class="stat-label">Baby shower</span>
                     </div>
                 </div>
             </div>
@@ -336,6 +291,12 @@
             </div>
         </div>
     </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
 
     <script type="module" src="./src/js/main.js"></script>
 </body>
