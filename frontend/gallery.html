@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio | Fotografía de Autor</title>
+    <meta name="description"
+        content="Galería exclusiva de Miguel Olivera. Colección de paisajes aéreos, cuadros de autor y fotografía artística disponible para venta.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon-pro-v2.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;500;700&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+
+<body class="dark-theme">
+    <nav id="navbar" class="glass-effect">
+        <div class="container nav-content">
+            <a href="#" class="logo">Miguel Olivera Labrin</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#hero">Inicio</a></li>
+                <li><a href="gallery.html" class="active">Galería</a></li>
+                <li><a href="index.html#videos">Videos</a></li>
+                <li><a href="index.html#testimonials">Testimonios</a></li>
+                <li><a href="index.html#about">Nosotros</a></li>
+                <li><a href="index.html#instagram">Instagram</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="header-spacer" style="height: var(--nav-height);"></div>
+
+    <main>
+        <section id="gallery-page" class="container section">
+            <div class="section-header section-fade">
+                <h2 class="section-title">Galería</h2>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="paisajes">Paisajes</button>
+                    <button class="filter-btn" data-filter="cuadros">Cuadros</button>
+                    <button class="filter-btn" data-filter="sesiones">Sesiones</button>
+                    <button class="filter-btn" data-filter="bodas">Bodas</button>
+                    <div class="filter-dropdown">
+                        <button class="filter-btn dropdown-toggle" data-filter="deportiva">
+                            Deportiva ▼
+                        </button>
+                        <div class="filter-dropdown-content">
+                            <button class="filter-btn-sub" data-filter="deportiva" data-subcategory="all">Todos</button>
+                            <button class="filter-btn-sub" data-filter="deportiva"
+                                data-subcategory="across-andes">Across-Andes</button>
+                            <button class="filter-btn-sub" data-filter="deportiva" data-subcategory="trail">Trail</button>
+                            <button class="filter-btn-sub" data-filter="deportiva" data-subcategory="rally">Rally</button>
+                            <button class="filter-btn-sub" data-filter="deportiva" data-subcategory="bike">Bike</button>
+                        </div>
+                    </div>
+                    <button class="filter-btn" data-filter="fauna">Fauna</button>
+                    <button class="filter-btn" data-filter="familiar">Familiar</button>
+                    <button class="filter-btn" data-filter="productos">Productos</button>
+                </div>
+                <div class="gallery-descriptions">
+                    <p class="description active" data-description="paisajes">Capturando la inmensidad y la belleza de la naturaleza desde una perspectiva única. Cada imagen es una invitación a explorar y conectar con el entorno.</p>
+                    <p class="description" data-description="cuadros">Obras de autor que transforman cualquier espacio. Cada cuadro es una pieza de arte única, impresa en alta calidad y lista para colgar.</p>
+                    <p class="description" data-description="sesiones">Retratos que capturan la esencia de las personas. Sesiones personalizadas para crear recuerdos inolvidables.</p>
+                    <p class="description" data-description="bodas">Capturando el amor y la emoción de uno de los días más importantes de tu vida. Fotografía de bodas con un estilo natural y elegante.</p>
+                    <p class="description" data-description="deportiva">La dureza y la belleza de una de las carreras más exigentes del mundo. Fotografía documental de la aventura y el espíritu de superación.</p>
+                    <p class="description" data-description="across-andes">La dureza y la belleza de una de las carreras más exigentes del mundo. Fotografía documental de la aventura y el espíritu de superación.</p>
+                    <p class="description" data-description="trail">Capturando la emoción de la fotografía deportiva en el trail running, con experiencia en más de 10 trails distintos. Cada imagen transmite la energía y la pasión de los corredores en la montaña.</p>
+                    <p class="description" data-description="rally">La velocidad, el polvo y la adrenalina del mundo del rally. Imágenes que te transportan al corazón de la competición.</p>
+                    <p class="description" data-description="bike">El ciclismo de montaña en su máxima expresión. Rutas desafiantes, paisajes espectaculares y la pasión por las dos ruedas.</p>
+                    <p class="description" data-description="fauna">La fauna en su hábitat natural. Una mirada respetuosa y paciente para capturar la belleza de la vida salvaje.</p>
+                    <p class="description" data-description="familiar">Momentos especiales, sonrisas y emociones. Fotografía familiar para atesorar los recuerdos más preciados.</p>
+                    <p class="description" data-description="productos">Fotografía de producto que realza la calidad y el diseño. Imágenes que venden y comunican la esencia de tu marca.</p>
+                </div>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Los items se cargarán dinámicamente desde Supabase -->
+                <div class="loading-state">Cargando galería...</div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Visual Studio - Miguel Olivera. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="index.html#hero">Inicio</a>
+                <a href="gallery.html">Galería</a>
+                <a href="index.html#about">Nosotros</a>
+                <a href="index.html#contact">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>
