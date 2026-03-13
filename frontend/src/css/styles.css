@@ -426,40 +426,56 @@ section {
 
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 3rem 2rem;
+    column-count: 2;
+    column-gap: 2rem;
+    display: block; /* Sustituir grid por columnas para efecto masonry */
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        column-count: 1;
+    }
 }
 
 .gallery-item {
-    grid-column: span 6;
+    break-inside: avoid;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.gallery-item:nth-child(even) {
-    margin-top: 0;
+.gallery-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .item-inner {
     position: relative;
     overflow: hidden;
-    background: var(--bg-surface);
-    margin-bottom: 2rem;
+    background: #111;
+    /* Eliminamos aspect-ratio para permitir el ratio natural de la foto */
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    height: auto; /* Altura automática para respetar el ratio original */
     display: block;
-    filter: grayscale(10%);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
-    filter: grayscale(0%);
+    transform: scale(1.04);
+}
+
+.item-content {
+    padding: 1.5rem;
 }
 
 /* Room Mockup removed per user request */
@@ -934,6 +950,32 @@ textarea:focus {
     color: var(--text-muted);
     text-decoration: none;
     font-size: 0.8rem;
+}
+
+/* Gallery Loading & Error States */
+.loading-state, .error-state, .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--bg-surface);
+    border-radius: 1rem;
+    border: 1px dashed rgba(255,255,255,0.1);
+    color: var(--text-muted);
+}
+
+.error-state {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+.loading-state {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
 }
 
 /* Lightbox Styles */

@@ -164,7 +164,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        targetGrid.innerHTML = items.map(item => `
+        // Sort items by display_order if available, otherwise by date
+        const sortedItems = [...items].sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
+
+        targetGrid.innerHTML = sortedItems.map(item => `
             <div class="gallery-item section-fade" ${isFullGallery ? `data-category="${item.category}" ${item.subcategory ? `data-subcategory="${item.subcategory}"` : ''}` : ''}>
                 <div class="item-inner">
                     <img src="${item.image_url}" alt="${item.title}" loading="lazy" class="view-large">
@@ -388,10 +391,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // 8. Hero Carousel Implementation
     const initHeroCarousel = () => {
         const carousel = document.querySelector('.hero-carousel');
-        if (!carousel) return;
+        const dotsContainer = document.querySelector('.carousel-dots');
+        if (!carousel || !dotsContainer) return;
 
         const slides = carousel.querySelectorAll('.carousel-slide');
-        const dotsContainer = document.querySelector('.carousel-dots');
+        if (slides.length === 0) return;
+
+        // Clean up previous dots to avoid duplicates on re-render
+        dotsContainer.innerHTML = '';
+        
         let currentSlide = 0;
         let slideInterval;
 
@@ -410,6 +418,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const dots = dotsContainer.querySelectorAll('.dot');
 
         const goToSlide = (n) => {
+            if (!slides[currentSlide] || !dots[currentSlide]) return;
+            
             slides[currentSlide].classList.remove('active');
             dots[currentSlide].classList.remove('active');
             currentSlide = (n + slides.length) % slides.length;
@@ -422,6 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const startInterval = () => {
+            if (slideInterval) clearInterval(slideInterval);
             slideInterval = setInterval(nextSlide, 6000);
         };
 
@@ -433,7 +444,8 @@ document.addEventListener('DOMContentLoaded', () => {
         startInterval();
     };
 
-    initHeroCarousel();
+    // Remove the static call at the end, it's now handled by fetchGalleryItems
+    // initHeroCarousel();
     setupLightbox();
 
     // TSK-009: Se eliminó el bloque de código 'Custom Video Controls' que era necesario para los videos locales.
