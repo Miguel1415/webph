@@ -475,36 +475,22 @@ section {
 }
 
 .item-content {
-    padding: 1.5rem;
-}
-
-/* Room Mockup removed per user request */
-.gallery-item[data-category="frames"] .item-inner {
-    /* Styles reverted to default or specific minimal styling if needed */
-}
-
-/* Ensure images behave normally */
-.gallery-item[data-category="frames"] img {
-    /* Inherit default styles */
-}
-
-
-.item-content {
-    padding: 0 1rem;
+    padding: 1rem;
     transition: var(--transition);
 }
 
-.item-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: 400;
-    /* Lighter font weight */
-    color: var(--primary);
+.item-content:empty,
+.collection-desc:empty {
+    display: none;
 }
 
 .collection-desc {
     font-size: 0.9rem;
     color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0;
+}
     margin-bottom: 1.5rem;
     font-weight: 300;
     line-height: 1.6;

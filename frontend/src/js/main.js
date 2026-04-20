@@ -167,17 +167,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // Sort items by display_order if available, otherwise by date
         const sortedItems = [...items].sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
 
-        targetGrid.innerHTML = sortedItems.map(item => `
-            <div class="gallery-item section-fade" ${isFullGallery ? `data-category="${item.category}" ${item.subcategory ? `data-subcategory="${item.subcategory}"` : ''}` : ''}>
-                <div class="item-inner">
-                    <img src="${item.image_url}" alt="${item.title}" loading="lazy" class="view-large">
+        targetGrid.innerHTML = sortedItems.map(item => {
+            const fileName = item.image_url.split('/').pop();
+            const localFallback = `assets/images/Galeria/${item.category}/${fileName}`;
+            
+            return `
+                <div class="gallery-item section-fade" ${isFullGallery ? `data-category="${item.category}" ${item.subcategory ? `data-subcategory="${item.subcategory}"` : ''}` : ''}>
+                    <div class="item-inner">
+                        <img src="${item.image_url}" 
+                            alt="${item.description || ''}" 
+                            loading="lazy" 
+                            class="view-large" 
+                            data-description="${item.description || ''}"
+                            onerror="this.src='${localFallback}'; this.onerror=()=>this.closest('.gallery-item').style.display='none'; console.warn('Fallback local para galería:', '${fileName}')">
+                    </div>
+                    <div class="item-content">
+                        <p class="collection-desc">${item.description || ''}</p>
+                    </div>
                 </div>
-                <div class="item-content">
-                    <h3>${item.title}</h3>
-                    <p class="collection-desc">${item.description || ''}</p>
-                </div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
 
         // Re-observe new items for animations
         document.querySelectorAll('.gallery-item').forEach(el => {
@@ -198,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // 9. Lightbox Functionality
-    const openLightbox = (url, title) => {
+    const openLightbox = (url, description) => {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxCaption = document.getElementById('lightbox-caption');
@@ -206,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!lightbox) return;
         
         lightboxImg.src = url;
-        lightboxCaption.textContent = title;
+        lightboxCaption.textContent = description || '';
         lightbox.style.display = 'block';
         setTimeout(() => {
             lightbox.classList.add('active');
@@ -259,10 +268,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleLightboxClick = (e) => {
         e.preventDefault();
         const trigger = e.currentTarget;
-        const url = trigger.dataset.url || trigger.src;
-        const title = trigger.dataset.title || trigger.alt;
-        openLightbox(url, title);
+        const url = trigger.src || trigger.dataset.url;
+        const description = trigger.dataset.description || trigger.alt || '';
+        openLightbox(url, description);
     };
+
+    let heroCarouselInterval; // Variable global al scope de main.js para control de limpieza
 
     const renderHero = (items) => {
         if (!heroCarousel) return;
@@ -272,14 +283,22 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        heroCarousel.innerHTML = items.map((item, index) => `
-            <div class="carousel-slide ${index === 0 ? 'active' : ''}"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${item.image_url}');">
-            </div>
-        `).join('');
+        heroCarousel.innerHTML = items.map((item, index) => {
+            // Extraer el nombre del archivo de la URL de Supabase para el fallback local
+            const fileName = item.image_url.split('/').pop();
+            const localFallback = `assets/images/carrousel/${fileName}`;
+            
+            return `
+                <div class="carousel-slide ${index === 0 ? 'active' : ''}"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${item.image_url}'), url('${localFallback}'); background-color: #1a1a1a;">
+                    <img src="${item.image_url}" style="display:none" 
+                        onerror="this.parentElement.style.backgroundImage = 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(\'${localFallback}\')'; console.warn('Usando fallback local para Hero [${index}]: ${fileName}')">
+                </div>
+            `;
+        }).join('');
 
-        // Wait for next tick to ensure DOM is ready
-        setTimeout(() => initHeroCarousel(), 100);
+        // Wait for next tick to ensure DOM is ready and images have a chance to start loading
+        setTimeout(() => initHeroCarousel(), 200);
     };
 
     const fetchGalleryItems = async () => {
@@ -288,14 +307,16 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Fetch Hero items
             if (heroCarousel) {
-                const { data: heroData } = await supabase
+                const { data: heroData, error: heroError } = await supabase
                     .from('gallery_items')
                     .select('*')
                     .eq('is_hero', true)
                     .order('display_order', { ascending: true });
                 
+                if (heroError) throw heroError;
                 if (heroData) renderHero(heroData);
             }
+// ... (resto de fetchGalleryItems)
 
             // Fetch Gallery items
             const { data, error } = await supabase
@@ -343,31 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Form Handling with Feedback
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.innerHTML;
-
-            btn.innerHTML = '<span>Enviando Solicitud...</span>';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                btn.innerHTML = '<span>¡Gracias! Nos contactaremos pronto.</span>';
-                btn.style.backgroundColor = 'var(--accent)';
-                contactForm.reset();
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.backgroundColor = '';
-                    btn.disabled = false;
-                }, 4000);
-            }, 2000);
-        });
-    }
-
-    // 7. Mobile Menu Toggle
+    // 5. Smooth Anchor Links
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
@@ -397,11 +394,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const slides = carousel.querySelectorAll('.carousel-slide');
         if (slides.length === 0) return;
 
+        // Limpiar intervalo anterior antes de iniciar uno nuevo
+        if (heroCarouselInterval) {
+            clearInterval(heroCarouselInterval);
+        }
+
         // Clean up previous dots to avoid duplicates on re-render
         dotsContainer.innerHTML = '';
         
         let currentSlide = 0;
-        let slideInterval;
 
         // Create dots
         slides.forEach((_, index) => {
@@ -423,8 +424,10 @@ document.addEventListener('DOMContentLoaded', () => {
             slides[currentSlide].classList.remove('active');
             dots[currentSlide].classList.remove('active');
             currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
+            if (slides[currentSlide] && dots[currentSlide]) {
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
         };
 
         const nextSlide = () => {
@@ -432,12 +435,11 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const startInterval = () => {
-            if (slideInterval) clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 6000);
+            heroCarouselInterval = setInterval(nextSlide, 6000);
         };
 
         const resetInterval = () => {
-            clearInterval(slideInterval);
+            clearInterval(heroCarouselInterval);
             startInterval();
         };
 
